@@ -1,3 +1,3 @@
-Checks: "-*,google-*,modernize-*"
+Checks: "-*,google-*"
 HeaderFilterRegex: ".*"
 CheckOptions: []
