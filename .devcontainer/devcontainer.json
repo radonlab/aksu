@@ -30,7 +30,7 @@
   },
 
   // Uncomment the next line if you want to publish any ports.
-  "appPort": ["8080:80"],
+  "appPort": ["8080:8080"],
 
   // Add the IDs of extensions you want installed when the container is created in the array below.
   "extensions": [
