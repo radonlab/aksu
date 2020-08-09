@@ -1,0 +1,8 @@
+[
+  {
+    "name": "libevent",
+    "type": "git",
+    "url": "git@github.com:libevent/libevent.git",
+    "branch": "release-2.1.10-stable"
+  }
+]
