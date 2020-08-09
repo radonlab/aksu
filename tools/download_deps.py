@@ -33,9 +33,15 @@ def download_dependencies(dep_list, dest_dir):
         dep.download_to(target_dir)
 
 
-def checkout_branches(dep_list):
+def checkout_branches(dep_list, dest_dir):
     for dep in dep_list:
-        dep.checkout()
+        target_dir = os.path.join(dest_dir, dep.name)
+        current_dir = os.getcwd()
+        os.chdir(target_dir)
+        try:
+            dep.checkout()
+        finally:
+            os.chdir(current_dir)
 
 
 def main():
@@ -45,7 +51,7 @@ def main():
     with open(deps_file, 'r') as fp:
         dep_list = map(DepInfo, json.load(fp))
     download_dependencies(dep_list, dest_dir)
-    checkout_branches(dep_list)
+    checkout_branches(dep_list, dest_dir)
 
 
 if __name__ == '__main__':
