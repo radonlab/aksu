@@ -6,7 +6,14 @@ endif()
 
 project(aksu VERSION 0.0.1 LANGUAGES C)
 
+option(AKSU_WITH_SYSTEM_SSL "Build with system OpenSSL" OFF)
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+if(NOT AKSU_WITH_SYSTEM_SSL)
+endif()
+
+find_package(OpenSSL REQUIRED)
 
 find_package(LibEvent REQUIRED)
 

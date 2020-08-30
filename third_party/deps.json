@@ -1,5 +1,11 @@
 [
   {
+    "name": "openssl",
+    "type": "git",
+    "url": "https://github.com/openssl/openssl.git",
+    "branch": "OpenSSL_1_1_1d"
+  },
+  {
     "name": "libevent",
     "type": "git",
     "url": "git@github.com:libevent/libevent.git",
