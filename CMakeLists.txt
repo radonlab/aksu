@@ -14,7 +14,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 if(AKSU_WITH_SYSTEM_SSL)
   find_package(OpenSSL REQUIRED)
 else()
-  add_subdirectory(third_party/openssl)
+  add_subdirectory(third_party/boringssl)
 endif()
 
 if(AKSU_WITH_SYSTEM_EVENT)

@@ -1,9 +1,9 @@
 [
   {
-    "name": "openssl",
+    "name": "boringssl",
     "type": "git",
-    "url": "https://github.com/openssl/openssl.git",
-    "branch": "OpenSSL_1_1_1d"
+    "url": "https://github.com/google/boringssl.git",
+    "branch": "3945"
   },
   {
     "name": "libevent",
