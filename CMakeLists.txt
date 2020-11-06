@@ -6,22 +6,25 @@ endif()
 
 project(aksu VERSION 0.0.1 LANGUAGES C)
 
+include(ExternalProject)
+
 option(AKSU_WITH_SYSTEM_SSL "Build with system OpenSSL" OFF)
-option(AKSU_WITH_SYSTEM_EVENT "Build with system LibEvent" OFF)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+set(AKSU_THIRD_PARTY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
 
 if(AKSU_WITH_SYSTEM_SSL)
   find_package(OpenSSL REQUIRED)
 else()
-  add_subdirectory(third_party/boringssl)
+  ExternalProject_Add(boringssl
+    SOURCE_DIR "${AKSU_THIRD_PARTY_DIR}/boringssl/src"
+  )
 endif()
 
-if(AKSU_WITH_SYSTEM_EVENT)
-  find_package(LibEvent REQUIRED)
-else()
-  add_subdirectory(third_party/libevent)
-endif()
+ExternalProject_Add(libevent
+  SOURCE_DIR "${AKSU_THIRD_PARTY_DIR}/libevent/src"
+)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}

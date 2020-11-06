@@ -28,14 +28,14 @@ def clean_target_dir(target):
 
 def download_dependencies(dep_list, dest_dir):
     for dep in dep_list:
-        target_dir = os.path.join(dest_dir, dep.name)
+        target_dir = os.path.join(dest_dir, dep.name, 'src')
         clean_target_dir(target_dir)
         dep.download_to(target_dir)
 
 
 def checkout_branches(dep_list, dest_dir):
     for dep in dep_list:
-        target_dir = os.path.join(dest_dir, dep.name)
+        target_dir = os.path.join(dest_dir, dep.name, 'src')
         current_dir = os.getcwd()
         os.chdir(target_dir)
         try:
