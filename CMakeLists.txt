@@ -19,6 +19,7 @@ if(AKSU_WITH_SYSTEM_SSL)
 else()
   ExternalProject_Add(boringssl
     SOURCE_DIR "${AKSU_THIRD_PARTY_DIR}/boringssl/src"
+    INSTALL_COMMAND python "${AKSU_THIRD_PARTY_DIR}/boringssl/install.py" --prefix "${CMAKE_BINARY_DIR}"
   )
 endif()
 
