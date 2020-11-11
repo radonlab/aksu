@@ -3,7 +3,7 @@
 # Build Tree
 build
 # Third Party
-third_party/*/
+third_party/*/src
 # Python Byte-code
 __pycache__
 *.py[cod]
