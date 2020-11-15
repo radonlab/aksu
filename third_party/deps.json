@@ -1,11 +1,5 @@
 [
   {
-    "name": "boringssl",
-    "type": "git",
-    "url": "https://github.com/google/boringssl.git",
-    "branch": "3945"
-  },
-  {
     "name": "libevent",
     "type": "git",
     "url": "https://github.com/libevent/libevent.git",
