@@ -23,9 +23,7 @@ else()
   )
 endif()
 
-ExternalProject_Add(libevent
-  SOURCE_DIR "${AKSU_THIRD_PARTY_DIR}/libevent/src"
-)
+add_subdirectory(${AKSU_THIRD_PARTY_DIR}/libevent/src)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
