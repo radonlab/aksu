@@ -1,5 +1,5 @@
-add_executable(aksu aksu.c ${AKSU_SOURCES})
+add_executable(aksu aksu.c)
 
-target_link_libraries(aksu
-  ${LIBEVENT_LIBRARIES}
-)
+target_include_directories(aksu PUBLIC ${LIBEVENT_INCLUDE_DIRS})
+
+target_link_libraries(aksu event_core_static event_openssl_static)

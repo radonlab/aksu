@@ -12,15 +12,8 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 set(AKSU_THIRD_PARTY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
 
-set(OPENSSL_USE_STATIC_LIBS TRUE)
+# set(OPENSSL_USE_STATIC_LIBS TRUE)
 
 add_subdirectory(${AKSU_THIRD_PARTY_DIR}/libevent/src)
-
-include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}
-  ${LIBEVENT_INCLUDE_DIRS}
-)
-
-set(AKSU_SOURCES)
 
 add_subdirectory(cmd)
